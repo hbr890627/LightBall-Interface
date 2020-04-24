@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>LightBall</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="sytle.css">
+    <script src="https://kit.fontawesome.com/da7fdceb5d.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="init()">
+    <div class="main">
+
+        <!-- <audio src="example.mp3" id="musicPlayer"></audio> -->
+
+        <audio id="musicPlayer">
+            <source src="example.mp3">
+        </audio>
+
+
+        <!-- <div class="area">
+            <div class="block">
+                <p id="test">test</p>
+            </div>
+        </div> -->
+
+
+        <!-- top left -->
+        <div class="area a1">
+            <div class="block">
+                <div class="item">
+                    <h1 class="block-title">effect option</h1>
+                    <div class="sblock">
+                        <li>effect1</li>
+                        <li>effect2</li>
+                        <li>effect3</li>
+                        <li>effect4</li>
+                    </div>
+                </div>
+                <input type="button" value="ADD EFFECT" class="btn">
+            </div>
+
+            <div class="block">
+                <div class="item">
+                    <h1 class="block-title">effect list</h1>
+                    <div class="sblock">
+                        <li>effect1</li>
+                        <li>effect2</li>
+                        <li>effect3</li>
+                        <li>effect4</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="item">
+                    <h1 class="block-title">keypoint list</h1>
+                    <div class="sblock">
+                        <li id="keypoint">effect1</li>
+                        <li>effect2</li>
+                        <li>effect3</li>
+                        <li>effect4</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- top middle -->
+        <div class="area a2">
+            <div class="block">
+                <h1 class="block-title">Global Configuration</h1>
+            </div>
+            <div class="block">
+                <h1 class="block-title">Effect Settings</h1>
+            </div>
+        </div>
+
+        <!-- top right -->
+        <div class="area a3">
+            <div class="block">
+                <h1 class="block-title">Effect atuo generation</h1>
+            </div>
+            <div class="block">
+                <h1 class="block-title">Keypoint Starting color</h1>
+            </div>
+        </div>
+
+
+
+        <!-- bottom -->
+        <div class="area a4">
+            <div class="music-player">
+                <i class="fas fa-backward btn" onclick="playBackward()" title="倒退"></i>
+                <i class="fas fa-play btn" onclick="playMusic()" title="播放"></i>
+                <i class="fas fa-pause btn" onclick="pauseMusic()" title="暫停"></i>
+                <i class="fas fa-stop btn" onclick="stopMusic()" title="停止"></i>
+                <i class="fas fa-forward btn" onclick="playForward()" title="快進"></i>
+                <i class="fas fa-music btn" onclick="playerFast()" title="加速"></i>
+                <i class="fas fa-clock" id="time"> 123</i>
+            </div>
+
+            <!-- <div class="waver">
+                <input type="text" placeholder="WaveRenderer">
+            </div> -->
+            <div class="waver-player">
+                <canvas id="time-point" height="10"></canvas>
+                <canvas id="waver" width="800" height="200" onclick="getTimePoint()"></canvas>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="canvas.js"></script>
+</body>
+
+</html>

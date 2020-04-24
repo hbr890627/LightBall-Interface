@@ -1,4 +1,4 @@
-
+// document.write('<script src="script.js"></script>');
 function Line(x, y1, y2, color) {
     this.x = x;
     this.y1 = y1;
@@ -7,6 +7,7 @@ function Line(x, y1, y2, color) {
 }
 
 var lines = [];
+var mouseLine;
 var timeLine;
 
 var canvas;
@@ -15,9 +16,35 @@ var context;
 window.onload = function () {
     canvas = document.getElementById("waver");
     context = canvas.getContext("2d");
-
     canvas.onmousedown = canvasClick;
+
+    this.document.addEventListener("keydown", this.buttonEvent);
 };
+
+function buttonEvent(e) {
+    if (e.keyCode == 39) {
+        playForward();
+    }
+    if (e.keyCode == 37) {
+        playBackward();
+    }
+    if (e.keyCode == 32) {
+        if (isPlaying) {
+            pauseMusic();
+        } else {
+            playMusic();
+        }
+    }
+    if (e.keyCode == 83) {
+        stopMusic();
+    }
+    if (e.keyCode == 190) {
+        playFast();
+    }
+    if (e.keyCode == 188) {
+        playSlow();
+    }
+}
 
 
 function addWave() {
@@ -57,7 +84,8 @@ function canvasClick(e) {
     // var clickX = e.clientX - canvas.offsetLeft;
     var clickX = e.offsetX;
     drawCanvas();
-    addLine(clickX);
+    addMouseLine(clickX);
+    getTimePoint();
 }
 
 function dragLine(e) {
@@ -77,11 +105,10 @@ function dragLine(e) {
     }
 }
 
-function addLine(clickX) {
-    var my = event.clientY;
+function addMouseLine(clickX) {
 
-    var test = document.getElementById("test");
-    test.innerHTML = " x: " + clickX + " y: " + my;
+    // var test = document.getElementById("test");
+    // test.innerHTML = " x: " + clickX + " y: " + my;
 
     context.beginPath();
     context.lineWidth = 2;
@@ -91,4 +118,8 @@ function addLine(clickX) {
     context.closePath();
 
     context.stroke();
+}
+
+function timeLine() {
+
 }
