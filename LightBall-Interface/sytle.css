@@ -3,14 +3,9 @@
     padding: 0;
     list-style: none;
     background: #636363;
+    font-family: sans-serif;
+    font-style: normal;
 }
-
- /* .main{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-} */
 
 h1{
     font-size: 26px;
@@ -30,65 +25,65 @@ h1{
     font-size: 30px;
 }
 
-/* top left */
+/* top */
 .a1{
-    top: 1%;
-    left: 5%;
-    transform: translate(0,0);
-    width: 30%;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 100%;
     height: 50%;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    border: orange 2px solid;
-}
-
-
-/* top middle */
-.a2{
-    top: 3%;
-    left: 5%;
-    width: 30%;
-    height: 50%;
-    transform: translate(0,0);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: orange 2px solid;
-}
-
-/* top right */
-.a3{
-    top: 3%;
-    left: 5%;
-    width: 30%;
-    height: 50%;
-    display: flex;
-    text-align: right;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    border: orange 2px solid;
+    /* border: orange 2px solid; */
 }
 
 /* button */
-.a4{
+.a2{
     position: absolute;
     transform: translate(-50%,0);
     bottom: 3%;
     left: 50%;
     width: 98%;
     text-align: center;
+    justify-content: center;
 }
 
 .block{
     flex: none;
     background: #2c3e50;
-    border: 2px solid white;
-    margin: 4px;
-    width: 250px;
-    height: 200px;
+    /* border: 5px solid white; */
+    border-radius: 20px;
+    margin: 0 50px;
+    width: 300px;
+    height: 400px;
     text-align: center;
     float: left;
+}
+
+.block span{
+    display: block;
+    background:#3498db;
+}
+
+span input{
+    background-color: white;
+}
+
+#effecttype::before{
+    text-align: left;
+    content: "Type: ";
+}
+#effectstart::before{
+    text-align: left;
+    content: "start: ";
+}
+#effectend::before{
+    text-align: left;
+    content: "end: ";
+}
+#effectcolor::before{
+    text-align: left;
+    content: "color: ";
 }
 
 
@@ -106,22 +101,36 @@ h1{
 
 .block-title{
     background-color: #2882db;
+    padding: 5px;
     text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.sblock{
+    max-height: 80%;
+    overflow-y: auto;
+    /* border: white 1px solid; */
 }
 
 .sblock li{
     background: #3498db;
-    margin: 4px 6px;
+    padding: 4px 6px;
     text-align: left;
+    transition: 0.3s;
 }
 
+.sblock li:hover{
+    padding: 6px 12px;
+    color: #b3b3b3;
+}
 
 /* item in area2 */
 .music-player{
     border: white 1px solid;
     border-radius: 10px;
     padding: 5px;
-    width: 800px;
+    width: 95%;
     text-align: center;
     color: white;
     left: 50%;
@@ -134,9 +143,24 @@ h1{
 .music-player i{
     margin:5px 15px;
     font-size: 36px;
-    
 }
 
+.current-time{
+    display: inline;
+    position: absolute;
+    left: 0%;
+}
+
+.music-time{
+    display: inline;
+    position: absolute;
+    right: 0%;
+}
+
+.download{
+    font-size: 50px;
+    color: white;
+}
 .btn{
     transition: 0.3s;
 }
@@ -146,14 +170,18 @@ h1{
     cursor: pointer;
 }
 
-#time{
-    position: absolute;
-    right: 0%; 
-}
-
 .waver-player{
     border: white 1px solid;
     height: 200px;
     overflow-x: scroll;
     overflow-y: hidden;
+}
+
+.waveform{
+    width:100%;
+    /* height: 300px; */
+    /* border: white 1px solid; */
+    /* transform: translate(,0); */
+    bottom: 50px;
+    margin: auto;
 }
